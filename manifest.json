@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Gamepad Video Controller",
+  "version": "1.0",
+  "description": "使用搖桿（Gamepad）控制 YouTube 或任意網頁上的影片播放。",
+  "author": "black",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "gamepad-video-controller@black",
+      "strict_min_version": "109.0"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.youtube.com/*", "*://*/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "icons": {}
+}
