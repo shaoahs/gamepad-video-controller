@@ -44,16 +44,15 @@ Button 9 的模式切換行為：
 打包成 `.xpi` 永久安裝：
 
 ```bash
-cd gamepad-video-controller
-zip -r ../gamepad-video-controller.xpi .
+zip -r ../gamepad-video-controller.xpi . -x "src/*" "node_modules/*" "*.config.js" "package.json" "bun.lock" "tsconfig.json" ".gitignore"
 ```
 
 ## 設定調整
 
-編輯 `content.js` 頂部的 `CONFIG` 物件：
+編輯 `src/config.js`：
 
 ```js
-const CONFIG = {
+export const CONFIG = {
   pollInterval: 100,     // polling 間隔（毫秒），越小越靈敏但耗 CPU
   axisThreshold: 0.5,    // 搖桿軸觸發閾值（0.0 ~ 1.0）
   seekStep: 10,          // D-pad / 搖桿軸快轉 / 倒退秒數
@@ -65,12 +64,36 @@ const CONFIG = {
 };
 ```
 
+修改後執行 `bun run build` 重新打包。
+
+## 開發
+
+```bash
+# 安裝依賴
+bun install
+
+# 打包（輸出至 content.js）
+bun run build
+
+# 監聽檔案變更自動重新打包
+bun run watch
+```
+
 ## 檔案結構
 
 ```
 gamepad-video-controller/
-├── manifest.json    # 擴充功能設定
-├── content.js       # 主要邏輯（注入至網頁）
-├── CHANGELOG.md     # 版本紀錄
+├── src/
+│   ├── index.js       # 入口、搖桿連接事件
+│   ├── config.js      # 全域設定常數
+│   ├── osd.js         # OSD 操作提示
+│   ├── video.js       # 影片元素工具函式
+│   ├── controls.js    # 字幕與劇院模式切換
+│   └── gamepad.js     # 按鈕與搖桿軸事件處理
+├── manifest.json      # 擴充功能設定
+├── content.js         # 打包輸出（勿手動編輯）
+├── rolldown.config.js # 打包設定
+├── package.json
+├── CHANGELOG.md
 └── README.md
 ```

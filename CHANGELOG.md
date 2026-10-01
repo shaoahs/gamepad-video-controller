@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.1.0] - 2026-10-01
+
+### 變更
+- 將單一 `content.js` 重構為多模組架構（`src/`）
+- 加入 rolldown 打包設定（`rolldown.config.js`）
+- 加入 `package.json`，使用 bun 管理開發依賴
+
+### 新增
+- `src/config.js` — 全域設定常數
+- `src/osd.js` — OSD 提示元件
+- `src/video.js` — 影片元素工具函式
+- `src/controls.js` — 字幕與劇院模式切換
+- `src/gamepad.js` — 按鈕與搖桿軸事件處理
+- `src/index.js` — 入口與搖桿連接事件
+
+---
+
 ## [1.0.0] - 2026-09-22
 
 ### 新增功能
