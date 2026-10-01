@@ -1,7 +1,7 @@
-import { getTargetVideo } from "./video.js";
-import { handleButton, handleAxes } from "./gamepad.js";
-import { showOSD } from "./osd.js";
-import { CONFIG } from "./config.js";
+import { getTargetVideo } from "src/video";
+import { handleButton, handleAxes } from "src/gamepad";
+import { showOSD } from "src/osd";
+import { CONFIG } from "src/config";
 
 "use strict";
 

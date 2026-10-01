@@ -1,7 +1,7 @@
-import { CONFIG } from "./config.js";
-import { showOSD } from "./osd.js";
-import { adjustVolume } from "./video.js";
-import { toggleSubtitles, toggleTheaterMode } from "./controls.js";
+import { CONFIG } from "src/config";
+import { showOSD } from "src/osd";
+import { adjustVolume } from "src/video";
+import { toggleSubtitles, toggleTheaterMode } from "src/controls";
 
 const lastButtonTime = {};
 const lastAxisTime = {};

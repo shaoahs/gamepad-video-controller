@@ -6,6 +6,7 @@
 - 將單一 `content.js` 重構為多模組架構（`src/`）
 - 加入 rolldown 打包設定（`rolldown.config.js`）
 - 加入 `package.json`，使用 bun 管理開發依賴
+- import 路徑統一使用 `src/` alias（由 rolldown `resolve.alias` 處理）
 
 ### 新增
 - `src/config.js` — 全域設定常數

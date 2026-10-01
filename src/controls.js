@@ -1,4 +1,4 @@
-import { showOSD } from "./osd.js";
+import { showOSD } from "src/osd";
 
 /** 開關字幕 */
 export function toggleSubtitles(video) {

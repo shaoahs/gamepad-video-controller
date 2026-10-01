@@ -79,6 +79,15 @@ bun run build
 bun run watch
 ```
 
+import 路徑使用 `src/` alias，例如：
+
+```js
+import { CONFIG } from "src/config";
+import { showOSD } from "src/osd";
+```
+
+alias 定義於 `rolldown.config.js` 的 `resolve.alias`。
+
 ## 檔案結構
 
 ```
@@ -92,7 +101,7 @@ gamepad-video-controller/
 │   └── gamepad.js     # 按鈕與搖桿軸事件處理
 ├── manifest.json      # 擴充功能設定
 ├── content.js         # 打包輸出（勿手動編輯）
-├── rolldown.config.js # 打包設定
+├── rolldown.config.js # 打包設定（含 src/ alias）
 ├── package.json
 ├── CHANGELOG.md
 └── README.md
